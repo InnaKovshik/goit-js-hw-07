@@ -24,6 +24,7 @@ const images = [
 ];
 
 
-for(let element of images) document.querySelector('#gallery').insertAdjacentHTML('beforeEnd', `<li><img src="${element.url}" alt="${element.alt}" width = 300 height = 250></li>`);
+const imagesList = document.querySelector('#gallery');
+imagesList.insertAdjacentHTML('beforeEnd', images.map (({ url, alt }) => `<li><img src="${url}" alt="${alt}" width = 300 height = 250></li>`).join(""));
 gallery.setAttribute("style", "list-style-type:none; display: flex;");
 
